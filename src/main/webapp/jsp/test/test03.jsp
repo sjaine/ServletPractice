@@ -26,6 +26,6 @@
 		}
 	%>
 	
-	<h2><%= result %></h2>
+	<h2 class="display-4 m-3 font-weight-lighter"><%= result %></h2>
 </body>
 </html>
