@@ -16,7 +16,7 @@
 		double height = Integer.parseInt(heightString);
 		double bmi = weight / ((height / 100.0) * (height / 100.0));
 		
-		String result = "정상";
+		String result = "0";
 		
 		if(bmi >= 30) {
 			result = "비만";
