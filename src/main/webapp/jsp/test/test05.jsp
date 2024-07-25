@@ -20,13 +20,13 @@
 	
 		for(int i = 0; i < transformValues.length; i++) {
 			if(transformValues[i].equals("inch")) {
-				transformList += (length * 0.393701) + " in\n";
+				transformList += (length * 0.3937) + " in <br>";
 			} else if(transformValues[i].equals("yard")) {
-				transformList += (length * 0.010936) + " yd\n";
+				transformList += (length * 0.010936) + " yd <br>";
 			} else if(transformValues[i].equals("feet")) {
-				transformList += (length * 0.032808) + " ft\n";
+				transformList += (length * 0.032808) + " ft <br>";
 			} else if(transformValues[i].equals("meter")) {
-				transformList += (length * 0.01) + " m\n";
+				transformList += (length * 0.01) + " m <br>";
 			}
 		}
  		
