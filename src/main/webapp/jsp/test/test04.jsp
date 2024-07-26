@@ -26,7 +26,7 @@
 			result = num1 - num2;
 			operator = "-";
 		} else if(operator.equals("multiply")) {
-			result = (double)num1 * num2;
+			result = num1 * num2;
 			operator = "X";
 		} else if(operator.equals("divide")) {
 			result = (double)num1 / num2;
@@ -36,8 +36,8 @@
 	%>
 	
 	<div class="m-3">
-		<div class="display-4">계산 결과</div>
-		<div class="display-1"><%= num1 %> <%= operator %> <%= num2 %> = <span class="text-primary"><%= result %></span></div>
+		<h2>계산 결과</h2>
+		<div class="display-4"><%= num1 %> <%= operator %> <%= num2 %> = <span class="text-primary"><%= result %></span></div>
 	</div>
 </body>
 </html>
