@@ -44,9 +44,9 @@
 			</thead>
 			<tbody>
 				<% 
-				if(point == null) {
-					for(Map<String, Object> store:list) {
-						if(store.get("menu").equals(menu)) {
+				for(Map<String, Object> store:list) {
+					if(store.get("menu").equals(menu)) {
+						if(point == null || (double)store.get("point") > 4.0) {
 				%>
 				<tr>
 					<td><%= store.get("menu") %></td>
@@ -55,17 +55,6 @@
 				</tr>
 				<% 		}
 					} 
-				} else { 
-					for(Map<String, Object> store:list) {
-						if(store.get("menu").equals(menu)  && (double)store.get("point") >= 4.0) {
-				%>
-				<tr>
-					<td><%= store.get("menu") %></td>
-					<td><%= store.get("name") %></td>
-					<td><%= store.get("point") %></td>
-				</tr>
-				<% 		}
-					}
 				}
 				%>
 			</tbody>
