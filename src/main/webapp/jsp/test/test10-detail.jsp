@@ -50,7 +50,7 @@
 	    musicInfo.put("album", "palette");
 	    musicInfo.put("singer", "아이유");
 	    musicInfo.put("thumbnail", "https://upload.wikimedia.org/wikipedia/ko/b/b6/IU_Palette_final.jpg");
-	    musicInfo.put("time", "253");
+	    musicInfo.put("time", 253);
 	    musicInfo.put("composer", "제휘,김희원");
 	    musicInfo.put("lyricist", "아이유");
 	    musicList.add(musicInfo);
