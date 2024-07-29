@@ -9,6 +9,27 @@
 <title>Melong</title>
 </head>
 <body>
-
+	<div>
+		<header>
+			<div>Melong</div>
+			<div>서치바</div>
+			<nav>
+				<ul>
+					<li><a></a></li>
+					<li><a></a></li>
+					<li><a></a></li>
+					<li><a></a></li>
+					<li><a></a></li>
+				</ul>
+			</nav>
+		</header>
+		<section>
+			<article>아이유</article>
+			<article>테이블</article>
+		</section>
+		<footer>
+			<hr><div class="small-text text-secondary">Copyright 2021. melong All Rights Reserved.</div>
+		</footer>
+	</div>
 </body>
 </html>

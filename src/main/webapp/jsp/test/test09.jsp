@@ -76,7 +76,7 @@
 				</thead>
 				<tbody>
 					<% for(Map<String, String> channel:list) { 
-						if(category == null | channel.get("category").equals(category)) {
+						if(category == null || channel.get("category").equals(category)) {
 					%>
 					<tr>
 						<td><%= channel.get("ch") %></td>
