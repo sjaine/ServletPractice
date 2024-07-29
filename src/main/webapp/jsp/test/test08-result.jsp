@@ -63,18 +63,20 @@
 	%>
 	
 	<div class="m-3">
-		<% for(Map<String, Object> book:list) { %>
-		<div class="d-flex">
-			<div>
-				<img src="<%= book.get("image") %>">
+		<% for(Map<String, Object> book:list) {
+			if(book.get("title").equals(title)) { %>
+			<div class="d-flex">
+				<div>
+					<img src="<%= book.get("image") %>">
+				</div>
+				<div class="ml-4">
+					<div class="display-1 font-weight-bold"><%= book.get("title") %></div>
+					<div class="display-2 text-info"><%= book.get("publisher") %></div>
+					<div class="display-4"><%= book.get("author") %></div>
+				</div>
 			</div>
-			<div class="ml-4">
-				<div class="display-1 font-weight-bold"><%= book.get("title") %></div>
-				<div class="display-2 text-info"><%= book.get("publisher") %></div>
-				<div class="display-4"><%= book.get("author") %></div>
-			</div>
-		</div>
-		<% } %>
+		<% }
+		} %>
 	</div>
 
 </body>
