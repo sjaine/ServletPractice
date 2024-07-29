@@ -38,7 +38,7 @@
 	    musicInfo.put("title", "좋은날");
 	    musicInfo.put("album", "Real");
 	    musicInfo.put("singer", "아이유");
-	    musicInfo.put("thumbnail", "https://upload.wikimedia.org/wikipedia/ko/3/3c/IU_-_Real.jpg");
+	    musicInfo.put("thumbnail", "https://i.namu.wiki/i/HWbOplqVR2OZViL2HzTN5aPXDkOP4yXLz9RKy_NML0tpPhTx4OfSqQ5i7B0U212p0iw7hMmVEZWML-ff9CDwrQ.webp");
 	    musicInfo.put("time", 233);
 	    musicInfo.put("composer", "이민수");
 	    musicInfo.put("lyricist", "김이나");
@@ -60,7 +60,7 @@
 	    musicInfo.put("title", "삐삐");
 	    musicInfo.put("album", "삐삐");
 	    musicInfo.put("singer", "아이유");
-	    musicInfo.put("thumbnail", "https://ww.namu.la/s/5ea8ba97baf8af3cc13f2972d9d23bcd17e19b8b8a96ce86d50c4bd03ad4df30321fc7e012738ad4b00c50642195ef7a68ff484ad760b15ff46bb1dc45ffb3fc399e4345c5d4dd2240820b59f3a573a57f84b8a6a2e4fb26ce5e81ad66d85f77debc979900275f6cf7a51386c8c39aa9");
+	    musicInfo.put("thumbnail", "https://image.bugsm.co.kr/album/images/500/201991/20199158.jpg");
 	    musicInfo.put("time", 194);
 	    musicInfo.put("composer", "이종훈");
 	    musicInfo.put("lyricist", "아이유");
@@ -71,7 +71,7 @@
 	    musicInfo.put("title", "스물셋");
 	    musicInfo.put("album", "CHAT-SHIRE");
 	    musicInfo.put("singer", "아이유");
-	    musicInfo.put("thumbnail", "https://w.namu.la/s/4a817b8f4ec9caca4027a6991651a401d683a7691f1926bd60e59908f306d439f7cc251af5ef263a6f0a249e831d5d9cf641855bf590dadd86869ff941aad8dc236bc91bac89f84cff60c981d8d6c85f57a2ff4df00b5efe3bbc10e9745ce13571eda48f1912435423317450475d6ffe");
+	    musicInfo.put("thumbnail", "https://image.bugsm.co.kr/album/images/500/5370/537084.jpg");
 	    musicInfo.put("time", 194);
 	    musicInfo.put("composer", "아이유,이종훈,이채규");
 	    musicInfo.put("lyricist", "아이유");
@@ -87,6 +87,11 @@
 	    musicInfo.put("composer", "아이유,이종훈,이채규");
 	    musicInfo.put("lyricist", "아이유");
 	    musicList.add(musicInfo);
+	    
+	    String target = request.getParameter("id");
+	    
+	    int targetId = Integer.parseInt(request.getParameter("id"));
+	    String keyword = request.getParameter("keyword");
 	%>
 
 	<div class="m-4">
@@ -111,36 +116,43 @@
 			</nav>
 		</header>
 		<section class="mt-2 mb-5">
+			<h3>곡 정보</h3>
 			<article class="border border-success d-flex p-3">
+				<% for(Map<String, Object> music:musicList) {
+					int id = (int)music.get("id");
+					if(id == targetId) {
+				%>
 				<div>
-					<img src="<%= artistInfo.get("photo") %>" width=200>
+					<img src="<%= music.get("thumbnail") %>" width=250>
 				</div>
-				<div class="ml-4">
-					<h2><%= artistInfo.get("name") %></h2>
-					<div><%= artistInfo.get("agency") %></div>
-					<div><%= artistInfo.get("debute") %> 데뷔</div>
-				</div>
-			</article>
-			<article class="mt-4">
-				<h3>곡 목록</h3>
-				<table class="table text-center">
-					<thead>
+				<div class="ml-4 mt-2">
+					<div class="display-4 font-weight-lighter"><%= music.get("title") %></div>
+					<div class="text-success font-weight-bolder"><%= music.get("singer") %></div>
+					<table class="table table-borderless font-weight-lighter mt-4 table-sm" >
 						<tr>
-							<th scope="col">no</th>
-							<th scope="col">제목</th>
-							<th scope="col">앨범</th>
-						</tr>
-					</thead>
-					<tbody>
-						<% for(Map<String, Object> music:musicList) { %>
-						<tr>
-							<td><%= music.get("id") %></td>
-							<td class="text-primary"><a href="/jsp/test/test10-detail.jsp?id=<%= music.get("id") %>"><%= music.get("title") %></a></td>
+							<td>앨범</td>
 							<td><%= music.get("album") %></td>
 						</tr>
-						<% } %>
-					</tbody>
-				</table>
+						<tr>
+							<td>재생시간</td>
+							<td><%= (Integer)music.get("time") / 60 %> : <%= (Integer)music.get("time") % 60 %></td>
+						</tr>
+						<tr>
+							<td>작곡가</td>
+							<td><%= music.get("composer") %></td>
+						</tr>
+						<tr>
+							<td>작사가</td>
+							<td><%= music.get("lyricist") %></td>
+						</tr>
+					</table>
+				</div>
+				<%	} 
+				} %>
+			</article>
+			<article class="mt-5">
+				<h3>가사</h3>
+				<hr> <div>가사 정보 없음</div>
 			</article>
 		</section>
 		<footer class="mt-5">
