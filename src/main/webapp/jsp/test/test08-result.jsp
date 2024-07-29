@@ -6,7 +6,7 @@
 <head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>책 세부정보</title>
 </head>
 <body>
 	<%
@@ -55,7 +55,7 @@
 	    };
 	    list.add(map);
 	    
-	    String title = request.getParameter("title");
+	    int targetId = Integer.parseInt(request.getParameter("id"));
 	    
 	    // 하나의 책을 지정할 수 있는 데이터를 파라미터로 전달 받고,
 	    // 이 값으로 하나의 책만 표시하는 조건을 만들어서 활용한다. 
@@ -64,7 +64,8 @@
 	
 	<div class="m-3">
 		<% for(Map<String, Object> book:list) {
-			if(book.get("title").equals(title)) { %>
+			int id = (Integer)book.get("id");
+			if(id == targetId) { %>
 			<div class="d-flex">
 				<div>
 					<img src="<%= book.get("image") %>">
