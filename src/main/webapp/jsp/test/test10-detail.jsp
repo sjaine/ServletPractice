@@ -89,7 +89,6 @@
 	    musicList.add(musicInfo);
 	    
 	    String target = request.getParameter("id");
-	    
 	    int targetId = Integer.parseInt(request.getParameter("id"));
 	    String keyword = request.getParameter("keyword");
 	%>
@@ -119,7 +118,7 @@
 			<h3>곡 정보</h3>
 			<article class="border border-success d-flex p-3">
 				<% for(Map<String, Object> music:musicList) {
-					int id = (int)music.get("id");
+					int id = (Integer)music.get("id");
 					if(id == targetId) {
 				%>
 				<div>
