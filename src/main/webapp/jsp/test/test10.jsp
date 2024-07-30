@@ -9,7 +9,7 @@
 <title>Melong</title>
 </head>
 <body>
-	<%
+<%
 	// 아티스트 정보 
 	
 	    Map<String, Object> artistInfo = new HashMap<>();
@@ -38,7 +38,7 @@
 	    musicInfo.put("title", "좋은날");
 	    musicInfo.put("album", "Real");
 	    musicInfo.put("singer", "아이유");
-	    musicInfo.put("thumbnail", "https://upload.wikimedia.org/wikipedia/ko/3/3c/IU_-_Real.jpg");
+	    musicInfo.put("thumbnail", "https://i.namu.wiki/i/HWbOplqVR2OZViL2HzTN5aPXDkOP4yXLz9RKy_NML0tpPhTx4OfSqQ5i7B0U212p0iw7hMmVEZWML-ff9CDwrQ.webp");
 	    musicInfo.put("time", 233);
 	    musicInfo.put("composer", "이민수");
 	    musicInfo.put("lyricist", "김이나");
@@ -50,7 +50,7 @@
 	    musicInfo.put("album", "palette");
 	    musicInfo.put("singer", "아이유");
 	    musicInfo.put("thumbnail", "https://upload.wikimedia.org/wikipedia/ko/b/b6/IU_Palette_final.jpg");
-	    musicInfo.put("time", "253");
+	    musicInfo.put("time", 253);
 	    musicInfo.put("composer", "제휘,김희원");
 	    musicInfo.put("lyricist", "아이유");
 	    musicList.add(musicInfo);
@@ -60,7 +60,7 @@
 	    musicInfo.put("title", "삐삐");
 	    musicInfo.put("album", "삐삐");
 	    musicInfo.put("singer", "아이유");
-	    musicInfo.put("thumbnail", "https://ww.namu.la/s/5ea8ba97baf8af3cc13f2972d9d23bcd17e19b8b8a96ce86d50c4bd03ad4df30321fc7e012738ad4b00c50642195ef7a68ff484ad760b15ff46bb1dc45ffb3fc399e4345c5d4dd2240820b59f3a573a57f84b8a6a2e4fb26ce5e81ad66d85f77debc979900275f6cf7a51386c8c39aa9");
+	    musicInfo.put("thumbnail", "https://image.bugsm.co.kr/album/images/500/201991/20199158.jpg");
 	    musicInfo.put("time", 194);
 	    musicInfo.put("composer", "이종훈");
 	    musicInfo.put("lyricist", "아이유");
@@ -71,7 +71,7 @@
 	    musicInfo.put("title", "스물셋");
 	    musicInfo.put("album", "CHAT-SHIRE");
 	    musicInfo.put("singer", "아이유");
-	    musicInfo.put("thumbnail", "https://w.namu.la/s/4a817b8f4ec9caca4027a6991651a401d683a7691f1926bd60e59908f306d439f7cc251af5ef263a6f0a249e831d5d9cf641855bf590dadd86869ff941aad8dc236bc91bac89f84cff60c981d8d6c85f57a2ff4df00b5efe3bbc10e9745ce13571eda48f1912435423317450475d6ffe");
+	    musicInfo.put("thumbnail", "https://image.bugsm.co.kr/album/images/500/5370/537084.jpg");
 	    musicInfo.put("time", 194);
 	    musicInfo.put("composer", "아이유,이종훈,이채규");
 	    musicInfo.put("lyricist", "아이유");
@@ -87,13 +87,59 @@
 	    musicInfo.put("composer", "아이유,이종훈,이채규");
 	    musicInfo.put("lyricist", "아이유");
 	    musicList.add(musicInfo);
+	    
+	    musicInfo = new HashMap<>();
+	    musicInfo.put("id", 7);
+	    musicInfo.put("title", "Hype Boy");
+	    musicInfo.put("album", "New Jeans");
+	    musicInfo.put("singer", "뉴진스");
+	    musicInfo.put("thumbnail", "https://i.namu.wiki/i/hn55b9JfPE6Yigyk4PfiC7FNZA5XyLKTYZUA_5H15C21TPSNGAlB_2GsfSwgOW7oFR87RaeHs2smDYBF2x9ZdASf4mCiKChQCuzO3WO2yB6QntRaP1WUS3xwkud8eAMSXH2G6ylJin6LiDrIHDO6XQ.jpg");
+	    musicInfo.put("time", 178);
+	    musicInfo.put("composer", "Gigi, Ylva Dimberg, 하니(HANNI)");
+	    musicInfo.put("lyricist", "250, Ylva Dimberg");
+	    musicList.add(musicInfo);
+	    
+	    musicInfo = new HashMap<>();
+	    musicInfo.put("id", 8);
+	    musicInfo.put("title", "Bubble Gum");
+	    musicInfo.put("album", "How Sweet");
+	    musicInfo.put("singer", "뉴진스");
+	    musicInfo.put("thumbnail", "https://i.namu.wiki/i/0mWMxCUB0CsjLirv3Sq4N0nPnRBL63DtF0XWE7xtDQ1h6pxlE7_3IB706BUyrIxaTLQu2x1U7D85Dvhjm33zlBPcWzeAUHYYM-KnBygnTyDJfs-kbw_uqp4dKGsw6XinZVKAr8jKiEIdCfs-lrvcqQ.webp");
+	    musicInfo.put("time", 201);
+	    musicInfo.put("composer", "250, Sarah Aarons, Elvira Anderfjard, Oscar Scheller");
+	    musicInfo.put("lyricist", "Gigi, Sarah Aarons, Elvira Anderfjard, 다니엘");
+	    musicList.add(musicInfo);
+	    
+	    musicInfo = new HashMap<>();
+	    musicInfo.put("id", 9);
+	    musicInfo.put("title", "Armageddon");
+	    musicInfo.put("album", "Armageddon");
+	    musicInfo.put("singer", "에스파");
+	    musicInfo.put("thumbnail", "https://i.namu.wiki/i/CVcZDtsyzRao8HfIU-DF9AeqDsZePiGsVhKZRkoFxy4FB2C5KOcBQ2FCWhSpk7-mZVuQPeoStimhvEIWMQYT_aQcfvB_L2Z_t2PQYFbgc4oc0gE-UYZl8IMbju5pi9ozZON-TFRZsYPBvCFYsLtr0w.webp");
+	    musicInfo.put("time", 196);
+	    musicInfo.put("composer", "EJAE, SUMIN, Waker");
+	    musicInfo.put("lyricist", "방혜현");
+	    musicList.add(musicInfo);
+	    
+	    musicInfo = new HashMap<>();
+	    musicInfo.put("id", 10);
+	    musicInfo.put("title", "Salty & Sweet");
+	    musicInfo.put("album", "MY WORLD");
+	    musicInfo.put("singer", "에스파");
+	    musicInfo.put("thumbnail", "https://i.namu.wiki/i/88_HJPqAOQiVXTAQCxF8opBYxHsX7XCYGPqGypQMg68_AtLmhpO2J0xVwcuHtEqSJlnsgxQPzOuFQOJLCH0kOEjio4zUTJjOhnP9HmPTRaeUDkeg8LMxdXxR7bzbrzIfOzNcN_C3do9AU3eyY36Ulg.webp");
+	    musicInfo.put("time", 202);
+	    musicInfo.put("composer", "Anne Judith Wik, Moa “Cazzi Opeia” Carlebecker, JINBYJIN");
+	    musicInfo.put("lyricist", "방혜현");
+	    musicList.add(musicInfo);
+	    
+	    String keyword = request.getParameter("keyword");
 	%>
 
 	<div class="m-4">
 		<header>
 			<div class="d-flex mt-2">
-				<h3 class="text-success mr-5">Melong</h3>
-				<form class="input-group mb-3 ml-5 w-25" method="get" action="/jsp/test/test10-detail.jsp">
+				<h3 class="mr-5"><a href="/jsp/test/test10.jsp" class="text-success" style="text-decoration: none;">Melong</a></h3>
+				<form class="input-group mb-3 ml-5 w-25" method="get" action="/jsp/test/test10-list.jsp">
 					<input type="text" class="form-control" name="keyword">
 					<div class="input-group-append">
 				    	<button type="submit" class="input-group-text bg-info text-white">검색</button>

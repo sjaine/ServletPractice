@@ -9,7 +9,7 @@
 <title>Melong</title>
 </head>
 <body>
-<%
+	<%
 	// 아티스트 정보 
 	
 	    Map<String, Object> artistInfo = new HashMap<>();
@@ -132,21 +132,14 @@
 	    musicInfo.put("lyricist", "방혜현");
 	    musicList.add(musicInfo);
 	    
-	    String target = request.getParameter("id");
 	    String keyword = request.getParameter("keyword");
-	    
-	    int targetId = 0;
-	    
-	    if(target != null) {
-	    	targetId = Integer.parseInt(target);
-	    }
 	%>
 
 	<div class="m-4">
 		<header>
 			<div class="d-flex mt-2">
 				<h3 class="mr-5"><a href="/jsp/test/test10.jsp" class="text-success" style="text-decoration: none;">Melong</a></h3>
-				<form class="input-group mb-3 ml-5 w-25" method="get" action="/jsp/test/test10-detail.jsp">
+				<form class="input-group mb-3 ml-5 w-25" method="get" action="/jsp/test/test10-list.jsp">
 					<input type="text" class="form-control" name="keyword">
 					<div class="input-group-append">
 				    	<button type="submit" class="input-group-text bg-info text-white">검색</button>
@@ -164,45 +157,34 @@
 			</nav>
 		</header>
 		<section class="mt-2 mb-5">
-			<h3>곡 정보</h3>
-			<article class="border border-success d-flex p-3">
-				<% for(Map<String, Object> music:musicList) {
-					int id = (Integer)music.get("id");
-					String search = String.valueOf(music.get("title"));
-					
-					if(search.equals(keyword) || id == targetId) {
-				%>
-				<div>
-					<img src="<%= music.get("thumbnail") %>" width=250>
-				</div>
-				<div class="ml-4 mt-2">
-					<div class="display-4 font-weight-lighter"><%= music.get("title") %></div>
-					<div class="text-success font-weight-bolder"><%= music.get("singer") %></div>
-					<table class="table table-borderless font-weight-lighter mt-4 table-sm" >
+			<article>
+				<h3>검색 결과</h3>
+				<table class="table text-center">
+					<thead>
 						<tr>
-							<td>앨범</td>
+							<th scope="col">no</th>
+							<th scope="col">제목</th>
+							<th scope="col">가수</th>
+							<th scope="col">앨범</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% for(Map<String, Object> music:musicList) { 
+							String title = String.valueOf(music.get("title"));
+							String singer = String.valueOf(music.get("singer"));
+							String album = String.valueOf(music.get("album")); 
+							if(title.contains(keyword) || singer.contains(keyword) || album.contains(keyword)) {
+						%>
+						<tr>
+							<td><%= music.get("id") %></td>
+							<td class="text-primary"><a href="/jsp/test/test10-detail.jsp?id=<%= music.get("id") %>"><%= music.get("title") %></a></td>
+							<td><%= music.get("singer") %></td>
 							<td><%= music.get("album") %></td>
 						</tr>
-						<tr>
-							<td>재생시간</td>
-							<td><%= (Integer)music.get("time") / 60 %> : <%= (Integer)music.get("time") % 60 %></td>
-						</tr>
-						<tr>
-							<td>작곡가</td>
-							<td><%= music.get("composer") %></td>
-						</tr>
-						<tr>
-							<td>작사가</td>
-							<td><%= music.get("lyricist") %></td>
-						</tr>
-					</table>
-				</div>
-				<%	} 
-				} %>
-			</article>
-			<article class="mt-5">
-				<h3>가사</h3>
-				<hr> <div>가사 정보 없음</div>
+						<% }
+						} %>
+					</tbody>
+				</table>
 			</article>
 		</section>
 		<footer class="mt-5">
