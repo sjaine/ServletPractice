@@ -89,8 +89,13 @@
 	    musicList.add(musicInfo);
 	    
 	    String target = request.getParameter("id");
-	    int targetId = Integer.parseInt(request.getParameter("id"));
 	    String keyword = request.getParameter("keyword");
+	    
+	    int targetId = 0;
+	    
+	    if(target != null) {
+	    	targetId = Integer.parseInt(request.getParameter("id"));
+	    }
 	%>
 
 	<div class="m-4">
@@ -119,7 +124,9 @@
 			<article class="border border-success d-flex p-3">
 				<% for(Map<String, Object> music:musicList) {
 					int id = (Integer)music.get("id");
-					if(id == targetId) {
+					String search = String.valueOf(music.get("title"));
+					
+					if(search.equals(keyword) || id == targetId) {
 				%>
 				<div>
 					<img src="<%= music.get("thumbnail") %>" width=250>
