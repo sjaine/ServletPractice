@@ -29,7 +29,7 @@ public class Ex01Controller extends HttpServlet{
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			
 			// 접속주소, 포트, id, password
-			String url = "jdbc:mysql://localhost:3306/내mysql데이터베이스이름";
+			String url = "jdbc:mysql://localhost:3306/sys_240708";
 			String id = "root";
 			String password = "root";
 			
